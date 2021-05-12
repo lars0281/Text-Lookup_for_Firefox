@@ -1,0 +1,49 @@
+{
+    "manifest_version": 2,
+    "name": "Text Lookup",
+    "author": "Glovebox Team",
+    "description": "Send selcetd text to search engine and present a message box with the top three search results. Made by Glovebox",
+    "homepage_url": "https://github.com/lars0281/glovxxxxxxxxxner",
+    "version": "0.0.1",
+    "icons": {
+        "48": "icons/LL-48.png",
+        "96": "icons/LL-96.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "textlookup@glovebox.com",
+            "strict_min_version": "63.0"
+        }
+    },
+    "browser_action": {
+       "browser_style": true,
+        "default_icon": "icons/LL-177.png",
+        "theme_icons": [{
+                "light": "icons/LL-32.png",
+                "dark": "icons/LL-32.png",
+                "size": 32
+            }
+        ],
+        "default_title":"Linink."
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [{
+            "matches": ["<all_urls>"],
+            "js": ["content_scripts/RevealUrl.js"]
+        }
+    ],
+    "permissions": [
+        "webRequest",
+        "activeTab",
+        "tabs",
+        "contextMenus",
+        "storage",
+        "unlimitedStorage",
+        "<all_urls>"
+    ]
+
+}
